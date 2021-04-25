@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.addEventListener('click', (e) => {
             e.preventDefault();
             const target = e.target.closest('.menu-item');
-            if(target){
+            if (target) {
                 const targetBlockId = target.querySelector('a').getAttribute('href').slice(1);
                 const targetBlock = document.getElementById(targetBlockId);
                 scrollToElement(targetBlock, 300);
@@ -54,13 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const bindModalForm = () => {
         // forms
         const orderForms = document.querySelectorAll('.order-form');
-
         /**
          * send data from modal forms after submit
-         * @param targetForm - modal for binding(element)
+         * @param targetForm - form for binding(element)
          */
         const formSender = (targetForm) => {
-
             targetForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const formData = new FormData(targetForm);
@@ -74,16 +72,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                         return response.text()
                     }).then((response) => {
-                    console.log(response);
-                    targetForm.reset();
-                }).catch((error) => {
-                    console.error(error);
-                });
+                        targetForm.reset();
+                    }).catch((error) => {
+                        console.error(error);
+                    });
             });
-
         };
         orderForms.forEach((item) => formSender(item));
     };
     bindModalForm();
 
+    const bindModal = () => {
+        const button = document.querySelector('.main-display__button');
+        const modal = document.querySelector('.modal__overlay');
+        button.addEventListener('click', (e) => {
+            modal.classList.toggle('unblock');
+        })
+    };
+    bindModal();
 });
