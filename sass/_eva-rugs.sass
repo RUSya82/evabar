@@ -1,0 +1,38 @@
+.eva-rugs
+  margin-bottom: 120px
+  &__header
+    margin-bottom: 0
+  &__items
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+  &__item 
+    width: 28%
+    margin-top: 85px
+  &__description
+    width: 250px
+    text-align: center
+    font-family: 'Roboto'
+    font-size: 18px
+    line-height: 21px
+    color: #767676
+  &__wrap-img
+    clip-path: polygon(50% 0%, 100% 30%, 100% 70%, 50% 100%, 0 70%, 0 30%)
+    width: 115px
+    height: 130px
+    background: linear-gradient(180deg, #e29bb5 -0.03%, #adaee6 100.01%)
+    opacity: 0.7
+    margin-bottom: 30px
+  &__border-img
+    clip-path: polygon(50% 5%, 98% 31%, 98% 69%, 50% 96%, 1% 67%, 1% 33%)
+    width: 105px
+    height: 125px
+    background-color: #ffffff
+@media only screen and (max-width: 780px)
+  .eva-rugs
+    &__item
+      width: 230px       
+@media only screen and (max-width: 320px)
+  .eva-rugs
+    &__item
+      margin-top: 50px             

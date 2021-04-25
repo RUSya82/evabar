@@ -1,0 +1,22 @@
+.portfolio
+  margin-bottom: 75px
+  &-slider__wrap
+    position: relative
+    max-width: 1085px
+    margin: 0 auto
+  &__slider
+    max-width: 1018px
+    border-radius: 5px
+    box-shadow: 0px 0px 100px rgba(103, 1, 184, 0.25)
+  &__img 
+    width: 100%
+.portfolio-slider__arrow-left, .portfolio-slider__arrow-right
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+  background-color: #ffffff
+  width: 59px !important
+  height: 52px !important
+@media only screen and (max-width: 1100px)
+  .portfolio
+    &-slider__wrap
+      padding-left: 20px
+      padding-right: 20px

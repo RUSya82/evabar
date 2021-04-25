@@ -1,0 +1,92 @@
+.adventages
+  margin-bottom: 200px
+  &__header
+    text-align: center
+    font-family: 'Roboto'
+    font-size: 50px
+    line-height: 59px
+    margin-bottom: 100px
+    & span 
+      text-transform: uppercase
+      color: #B90160
+      font-size: 50px
+      line-height: 59px
+  &__cards
+    display: flex
+    justify-content: space-around
+  &__card 
+    width: 28%
+    background-color: #ffffff
+    border-radius: 9px
+    box-shadow: 0px 0px 40px rgba(184, 0, 95, 0.2)
+  &__img
+    width: 100%
+    border-radius: 9px 9px 0 0
+  &__description
+    padding: 5%
+    &-header
+      text-transform: uppercase
+      font-family: 'RobotoBold'
+      font-size: 36px
+      line-height: 42px
+      padding-bottom: 16px
+    &-text 
+      font-size: 14px
+      line-height: 18px  
+      color: #767676    
+@media only screen and (max-width: 1200px)
+  .adventages
+    &__description
+      &-header
+        font-size: 30px
+        line-height: 34px   
+@media only screen and (max-width: 960px)
+  .adventages
+    &__header, &__header span
+      font-size: 30px
+    &__description
+      &-header
+        font-size: 26px
+        line-height: 30px
+      &-text 
+        font-size: 12px
+        line-height: 14px     
+@media only screen and (max-width: 660px)
+  .adventages
+    &__description
+      &-header
+        font-size: 22px
+        line-height: 24px
+      &-text 
+        font-size: 10px
+        line-height: 12px           
+@media only screen and (max-width: 520px)
+  .adventages
+    margin-bottom: 0
+    &__header, &__header span
+      font-size: 24px  
+      line-height: 30px
+    &__header
+      margin-bottom: 40px  
+    &__cards
+      flex-direction: column
+      align-items: center
+    &__card 
+      width: 86%
+      margin-bottom: 60px   
+    &__description
+      &-header
+        font-size: 36px
+        line-height: 42px
+      &-text 
+        font-size: 14px
+        line-height: 16px       
+@media only screen and (max-width: 320px)
+  .adventages   
+    &__description
+      &-header
+        font-size: 30px
+        line-height: 38px
+      &-text 
+        font-size: 12px
+        line-height: 14px            

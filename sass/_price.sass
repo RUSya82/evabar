@@ -1,0 +1,98 @@
+.price
+  margin-bottom: 106px
+  &__cards
+    display: flex
+    justify-content: space-around
+  &__card 
+    width: 190px  
+    height: 270px
+    box-shadow: 0px 0px 40px rgba(103, 1, 184, 0.25)
+    border-radius: 9px
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    &-top, &-bottom
+      width: 40%
+      display: flex
+      justify-content: space-between
+    &-wrap
+      min-height: 120px
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+  &__wrap
+    &-img
+      position: absolute
+      top: -80px
+      left: -80px
+    &-coin
+      border: solid
+      border-image-slice: 5
+      border-width: 3px
+      border-radius: 7px
+      border-image-source: linear-gradient(180deg, #e29bb5 -0.03%, #adaee6 100.01%)
+      margin-bottom: 20px
+      width: 150px
+      display: flex;
+      justify-content: center;
+  &__coin
+    padding: 0 20px 0 20px
+    font-family: 'RobotoBold'
+    font-size: 18px
+    line-height: 34px
+  &__img-top
+    position: absolute
+    top: -50px
+  &__description
+    display: flex
+    align-items: center
+    min-height: 42px
+    font-family: 'Roboto'
+    font-size: 18px
+    line-height: 21px
+    color: #888888
+    text-align: center
+    margin-bottom: 20px
+@media only screen and (max-width: 1100px)
+  .price
+    &__cards
+      display: flex
+      flex-direction: column
+    &__card 
+      &-top, &-bottom
+        width: 46%
+        margin: 0 auto  
+      &-top
+        margin-bottom: 120px
+      &-bottom > .price__card:nth-child(2) .price__wrap-img
+        top: -80px
+    &__wrap
+      &-img
+        top: -60px
+        left: 0
+@media only screen and (max-width: 960px)
+  .price
+    &__card 
+      &-top, &-bottom
+        width: 500px    
+@media only screen and (max-width: 560px)
+  .price
+    &__card 
+      &-top, &-bottom
+        width: 400px  
+    &__header
+      margin-bottom: 100px   
+@media only screen and (max-width: 460px)
+  .price
+    &__card
+      &-top, &-bottom
+        width: 300px
+        display: flex
+        flex-direction: column 
+        align-items: center
+        & .price__card:nth-child(1)
+          margin-bottom: 120px
+                           
