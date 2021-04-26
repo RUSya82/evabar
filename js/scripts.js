@@ -79,12 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const openModal = (modal) => {
       modal.classList.remove('unblock');
       toggleLockBody();
-        // document.body.style.overflow = 'hidden';
     };
     const closeModal = (modal) => {
         modal.classList.add('unblock');
-        toggleLockBody();
-        // document.body.style.overflow = 'auto';
+        setTimeout(toggleLockBody, 200);
     };
 
     const bindModalForm = () => {
