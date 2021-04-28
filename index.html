@@ -278,17 +278,22 @@
             <div class="form__items">
                 <div class="form__item">
                     <div class="form__input form__short">
-                        <input type="text" name="user-name" placeholder="Ваше имя">
+                        <input type="text" name="user-phone" class="user-phone" placeholder="Ваш телефон">
                     </div>
                     <div class="form__input form__short">
-                        <input type="text" name="user-email" placeholder="Ваш e-mail">
+                        <input type="email" name="user-email" class="user-email" placeholder="Ваш e-mail">
                     </div>
                 </div>
                 <div class="form__item">
                     <div class="form__item form__long">
-                        <textarea name="user-message" placeholder="Ваше сообщение (марка автомобиля, цвет ковриков, номер телефона)" rows="10" cols="20"></textarea>
+                        <textarea name="user-message" class="user-message" placeholder="Ваше сообщение (марка автомобиля, цвет ковриков, номер телефона)" rows="10" cols="20"></textarea>
                     </div>                    
                 </div>
+                <div class="form__policy">
+                    <input type="checkbox" name="policy" checked required>
+                    <span>Я соглашаюсь с</span> <a href="#"> политикой конфиденциальности</a>
+                </div>
+                <div class="form__message">Данные введены некорректно</div>
             </div>
             <button class="form__button button">отправить</button>
         </form>
@@ -324,22 +329,27 @@
                 <div class="form__items">
                     <div class="form__item">
                         <div class="form__input form__short">
-                            <input type="text" name="user-name" placeholder="Ваше имя">
+                            <input type="text" name="user-phone" class="user-phone" placeholder="Ваш телефон">
                         </div>
                         <div class="form__input form__short">
-                            <input type="text"  name="user-email" placeholder="Ваш e-mail">
+                            <input type="text"  name="user-email" class="user-email" placeholder="Ваш e-mail">
                         </div>
                     </div>
                     <div class="form__item">
                         <div class="form__item form__long">
-                            <textarea name="user-message" placeholder="Ваше сообщение (марка автомобиля, цвет ковриков, номер телефона)" rows="10" cols="20"></textarea>
+                            <textarea name="user-message" class="user-message" placeholder="Ваше сообщение (марка автомобиля, цвет ковриков, номер телефона)" rows="10" cols="20"></textarea>
                         </div>                    
                     </div>
+                    <div class="form__policy">
+                        <input type="checkbox" name="policy" checked required>
+                        <span>Я соглашаюсь с</span> <a href="#"> политикой конфиденциальности</a>
+                    </div>
+                    <div class="form__message">Данные введены некорректно</div>
                 </div>
                 <button class="form__button button">отправить</button>
             </form>
-        </div>        
+        </div>
     </div>
-    
+
 </body>
 </html>

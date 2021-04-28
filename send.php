@@ -8,7 +8,7 @@ require 'phpmailer/Exception.php';
 
 $json = file_get_contents('php://input');
 $obj = json_decode($json, true);
-$name = $obj['user-name'];
+$phone = $obj['user-phone'];
 $email = $obj['user-email'];
 $message = $obj['user-message'];
 
@@ -17,7 +17,7 @@ $title = 'Новая заявка с сайта EVABAR.BY';
 $body = "
 <div>
 <h2>$title</h2>
-<b>Имя:</b> $name<br>
+<b>Телефон:</b> $phone<br>
 <b>E-mail  :</b> $email<br>
 <b>Сообщение:</b> $message<br>";
 

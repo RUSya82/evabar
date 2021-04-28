@@ -808,13 +808,23 @@ body {
     background: #FFFFFF;
     border: 1px solid #A2A2A2;
     border-radius: 9px; }
+  .form__policy {
+    height: 30px; }
+  .form__message {
+    height: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #f90808;
+    opacity: 0; }
+    .form__message.show {
+      opacity: 1; }
   .form__button {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 137px;
     height: 37px;
-    margin-top: 40px;
+    margin-top: 25px;
     background: linear-gradient(95.2deg, #B90160 2.23%, #2E3192 99.51%);
     border-radius: 7px;
     font-size: 20px;
