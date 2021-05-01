@@ -140,20 +140,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 '8(___)___-__-__'
             ],
         };
-
         getMasks() {
             if (this.country && this.countryMasks[this.country]) {
                 return this.countryMasks[this.country];
             }
             return this.countryMasks['rus'];
         }
-
         selectMask(event) {
             const target = event.target;
-            if(target.value.length === 1){
+            if(!this.flag){
                 const currentMask = this.masks.find(item => item[0] === target.value);
                 if (currentMask){
                     this.maskPhone(this.element, currentMask);
+                    this.flag = true;
                     let event = new Event("focus");
                     this.element.dispatchEvent(event);
                 } else {
@@ -162,7 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         init() {
-            this.element.addEventListener('input', this.selectMask.bind(this));
+            this.flag = false;
+            this.element.addEventListener('input', (e) => {
+                this.selectMask(e);
+            });
         }
         maskPhone(element, masked = '+7 (___) ___-__-__') {
             function mask(event) {
@@ -198,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     /**
-     * Функция плавного скролла до элемента, чистая, работает как вверх, так и вниз (писал сам)))
+     * Функция плавного скролла до элемента,  работает как вверх, так и вниз (писал сам)))
      * @param element - ссылка на элемент
      * @param duration - продолжительность скролла в мс
      */
@@ -257,11 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
          * @param validObject - object of Validator
          */
         const formSender = (targetForm, validObject) => {
-            /**
-             * send POST-data by PHPMailer
-             * @param body
-             * @returns {Promise<Response>}
-             */
             const formMessage = targetForm.querySelector('.form__message');
             const postData = (body) => {
                 return fetch('send.php', {
@@ -313,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formSender(item, new Validator(item, [
                 {
                     element: phoneField,
-                    pattern: new RegExp('[0-9()+ \-]', 'ig'),
+                    pattern: new RegExp('[+375|8][(][0-9]{2,3}[)][0-9]{3}[-][0-9]{2}[-][0-9]{2}', ''),
                 },
                 {
                     element: emailField,
@@ -336,8 +333,7 @@ document.addEventListener('DOMContentLoaded', () => {
             openModal(modal);
         });
         modal.addEventListener('click', (e) => {
-            let target = e.target;
-            const isModal = target.closest('.modal-content');
+            const isModal = e.target.closest('.modal-content');
             if (!isModal) {
                 closeModal(modal);
             }
@@ -352,18 +348,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         phoneInputs.forEach(item => new MaskPhone(item, 'bel'));
         emailInputs.forEach(item => {
-            item.addEventListener('input', (e) => {
-                let val = e.target.value;
-                val = val.replace(/[^a-z@\-._]/ig, '');
-                e.target.value = val;
-            });
+            item.addEventListener('input', (e) => e.target.value = e.target.value.replace(/[^a-z@0-9\-._]/ig, ''));
         });
         messageInputs.forEach(item => {
-            item.addEventListener('input', (e) => {
-                let val = e.target.value;
-                val = val.replace(/[^a-zа-я.,\- 0-9]/ig, '');
-                e.target.value = val;
-            });
+            item.addEventListener('input', (e) => e.target.value = e.target.value.replace(/[^a-zа-я.,\- 0-9]/ig, ''));
         });
     };
     maskInputs();
